@@ -1,5 +1,5 @@
-
-REAL D
+!98C http://elib.rshu.ru/files_books/pdf/rid_7d9b20555f024448b1e8d7b692a4a9f6.pdf
+REAL D,G,E
 DOUBLE PRECISION S
 INTEGER B , C ,W,Z,Y
 REAL (KIND = 4) Q
@@ -33,7 +33,20 @@ DO
  Z = Z + 1
  Y = SELECTED_INT_KIND( Z )
  IF( Y == -1 ) EXIT
- PRINT*, Z, Y
 END DO
-
-END 
+PRINT*, Z, Y
+PRINT *, "__________________" !IF THEN 
+G = 1
+E = 1
+DO I = 1,100
+  G = G + (E /I)
+  IF(MOD(I,10) == 0)THEN
+  END IF  
+END DO
+PRINT *,G
+PRINT *, "__________________" ! GOTO
+PRINT *,"aaa"
+GO TO 51
+PRINT *,"BBB"
+51 PRINT *,"CCC"
+END
