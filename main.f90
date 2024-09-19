@@ -1,4 +1,4 @@
-!98C http://elib.rshu.ru/files_books/pdf/rid_7d9b20555f024448b1e8d7b692a4a9f6.pdf
+! http://elib.rshu.ru/files_books/pdf/rid_7d9b20555f024448b1e8d7b692a4a9f6.pdf
 REAL D,G,E
 DOUBLE PRECISION S
 INTEGER B , C ,W,Z,Y
