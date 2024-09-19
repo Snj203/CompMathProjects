@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ! http://elib.rshu.ru/files_books/pdf/rid_7d9b20555f024448b1e8d7b692a4a9f6.pdf
+=======
+
+!98C http://elib.rshu.ru/files_books/pdf/rid_7d9b20555f024448b1e8d7b692a4a9f6.pdf
+>>>>>>> d5bb12412e1c3874c3f2e921d0a8325976d793a6
 REAL D,G,E
 DOUBLE PRECISION S
 INTEGER B , C ,W,Z,Y
@@ -8,13 +13,9 @@ Q = 1
 U = 1
 S = 1
 PRINT *,S,"ASDASD"
-
-
 BIGQ = HUGE(Q)
 SMALLQ = BIGQ + 9999999
 PRINT *,Q, ' BigQ: ' ,BIGQ, ' SmallQ: ',SMALLQ ,"  AAA"
-
-
 D = 1* &
   (2-1) ** 3
 B = 10/3*3
