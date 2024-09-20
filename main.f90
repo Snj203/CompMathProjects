@@ -4,6 +4,9 @@ DOUBLE PRECISION S
 INTEGER B , C ,W,Z,Y
 REAL (KIND = 4) Q
 REAL (KIND = 8) U
+DO I = 0,4
+  PRINT *,I
+END DO
 Q = 1
 U = 1
 S = 1

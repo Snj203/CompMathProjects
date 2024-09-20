@@ -1,2 +1,0 @@
-PROGRAM Sunday
-END PROGRAM Sunday
