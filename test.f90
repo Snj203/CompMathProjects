@@ -2,6 +2,9 @@ PROGRAM Factorial
 INTEGER, DIMENSION(0:15) :: A
 INTEGER I,B,C,D
 REAL G,K
+DO N = 2,2
+  PRINT *,"asdasd123123123"
+END DO
 G = 15.256
 K = 15
 PRINT *,"fsfs",MOD(G,K)
