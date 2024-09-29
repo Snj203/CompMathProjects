@@ -1,4 +1,4 @@
-PROGRAM Converter
+PROGRAM Converter !bad precision in frac part
 REAL READER,FPART
 INTEGER IPART,FPC,UL,N,NN,L,K,Q,W,P,CUR_FPART
 INTEGER, PARAMETER :: B = 2
@@ -55,7 +55,7 @@ DO K = N - 1,NN ,-1
 END DO
 PRINT *,"            ",",          -FRACTIONAL PART"
 WRITE(1,*) ','
-DO K = 0 ,NN - 1
+DO K = 0 ,NN - 2
   L = IN_BINARY(K)
   PRINT *,"-",L
   WRITE(1,*) L

@@ -1,0 +1,69 @@
+PROGRAM Converter !bad precision in frac part
+INTEGER IPART,FPC,UL,N,NN,L,K,Q,W,P,CUR_FPART,FPART
+INTEGER, PARAMETER :: B = 2
+INTEGER, DIMENSION(0:50) :: IN_BINARY
+REAL, DIMENSION(0:50) :: APPEARED
+OPEN(1, FILE = "A.txt")
+!-READING
+READ(1, *) IPART,FPART
+CLOSE(1)
+IN_BINARY = 0
+APPEARED = 0
+!________
+FPC = FPART
+Q = 0
+DO WHILE(FPC > 9)
+  FPC = FPC / 10
+  Q = Q + 1
+END DO 
+UL = 10 ** (Q + 1)
+!____ FRAC PART TO BINARY
+N = 0
+W = 0
+CUR_FPART = -1
+FPART = FPART * 2
+DO WHILE(N < 24 )
+  IF(FPART > UL .OR. FPART == UL)THEN
+    FPART = FPART - UL
+    IN_BINARY(N) = 1
+  ELSE
+    IN_BINARY(N) = 0
+  END IF
+  APPEARED(W) = FPART
+  FPART = FPART * 2
+  W = W + 1
+  N = N + 1 
+  IF(ANY(APPEARED == FPART))THEN
+    EXIT
+  END IF
+END DO 
+NN = N
+!Integer part to binary
+DO WHILE (IPART >= 1)
+  IF(MOD(IPART,B) == 1)THEN
+    IN_BINARY(N) = 1
+  ELSE 
+    IN_BINARY(N) = 0
+  END IF  
+  IPART = IPART / 2
+  N = N + 1
+END DO
+!____OUT
+OPEN(1, FILE = "B.txt")
+IF(NN == N)THEN
+  N = N + 1
+END IF
+DO K = N - 1,NN ,-1
+  L = IN_BINARY(K)
+  WRITE(1,*) L
+  PRINT *,"-",L
+END DO
+PRINT *,"            ",",          -FRACTIONAL PART"
+WRITE(1,*) ','
+DO K = 0 ,NN - 2
+  L = IN_BINARY(K)
+  PRINT *,"-",L
+  WRITE(1,*) L
+END DO
+PRINT *,APPEARED
+END PROGRAM Converter
